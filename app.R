@@ -26,7 +26,7 @@ runnames <- colnames(times)[-1]
 n_runners <- seq(1, 5)
 ui <-  fluidPage(
     title = "Relay Race",
-    h2("MPA 2460: Relay Race Exercise"),
+    h2("Relay Race Exercise"),
     br(),
     tabsetPanel(
       tabPanel(
