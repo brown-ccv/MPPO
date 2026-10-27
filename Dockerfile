@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM rocker/geospatial:4.5.0
 ARG RENV_PATHS_CACHE=/root/.cache/R/renv
 ENV "RENV_PATHS_CACHE"="${RENV_PATHS_CACHE}"
