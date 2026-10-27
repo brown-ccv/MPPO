@@ -3,3 +3,18 @@ steps:
     args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/mppo-image:latest', '.']
     env:
       - 'DOCKER_BUILDKIT=1'
+
+  - name: 'http://gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'mppo-repo'
+      - '--image=us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/mppo-image:latest'
+      - '--region=us-central1'
+      - '--no-invoker-iam-check'
+      - '--min-instances=0'
+      - '--max-instances=1'
+      - '--cpu=1'
+      - '--memory=512Mi'
+      - '--cpu-boost'
